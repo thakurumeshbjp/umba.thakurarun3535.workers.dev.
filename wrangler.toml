@@ -1,0 +1,14 @@
+name = "umba"
+main = "worker.js"
+compatibility_date = "2024-09-23"
+
+[ai]
+binding = "NEXUS_AI"
+
+[[kv_namespaces]]
+binding = "CHAT_HISTORY"
+id = "fda86f463ab1460db0d9e2fd30f9482e"
+
+[[kv_namespaces]]
+binding = "PERMANENT_MEMORY"
+id = "66d81c7659804ad681962ad428c22058"

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UMBA NEXUS v5.4 — AI Worker</title>
+  <meta name="description" content="UMBA NEXUS v5.4 — AI Worker with 48 models, 9 plugin categories, advanced memory system, and multi-model fallback chain">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .version {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .feature {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+    .feature h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .feature p {
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+    .api-section {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .api-section h2 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+    .endpoint {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .method {
+      background: #4CAF50;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+    .method.get {
+      background: #2196F3;
+    }
+    .method.delete {
+      background: #f44336;
+    }
+    .links {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid #fff;
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🤖 UMBA NEXUS</h1>
+    <div class="version">v5.4 — Advanced AI Worker</div>
+    
+    <div class="features">
+      <div class="feature">
+        <h3>🧠 48 AI Models</h3>
+        <p>22 text generation models with automatic fallback chain for maximum reliability</p>
+      </div>
+      <div class="feature">
+        <h3>🎨 9 Plugin Categories</h3>
+        <p>Image generation, speech-to-text, text-to-speech, translation, embeddings, and more</p>
+      </div>
+      <div class="feature">
+        <h3>💾 Advanced Memory</h3>
+        <p>6-day chat history with TTL and permanent memory for important facts</p>
+      </div>
+    </div>
+
+    <div class="api-section">
+      <h2>📡 API Endpoints</h2>
+      <div class="endpoint">
+        <span class="method">POST</span>
+        <span>/</span>
+        <span style="opacity: 0.8;">— Chat with NEXUS</span>
+      </div>
+      <div class="endpoint">
+        <span class="method">POST</span>
+        <span>/image</span>
+        <span style="opacity: 0.8;">— Generate images</span>
+      </div>
+      <div class="endpoint">
+        <span class="method">POST</span>
+        <span>/transcribe</span>
+        <span style="opacity: 0.8;">— Speech-to-text</span>
+      </div>
+      <div class="endpoint">
+        <span class="method">POST</span>
+        <span>/speak</span>
+        <span style="opacity: 0.8;">— Text-to-speech</span>
+      </div>
+      <div class="endpoint">
+        <span class="method">POST</span>
+        <span>/translate</span>
+        <span style="opacity: 0.8;">— Translate text</span>
+      </div>
+      <div class="endpoint">
+        <span class="method get">GET</span>
+        <span>/plugins</span>
+        <span style="opacity: 0.8;">— List all plugins</span>
+      </div>
+      <div class="endpoint">
+        <span class="method get">GET</span>
+        <span>/health</span>
+        <span style="opacity: 0.8;">— Health check</span>
+      </div>
+      <div class="endpoint">
+        <span class="method get">GET</span>
+        <span>/memory</span>
+        <span style="opacity: 0.8;">— View permanent memory</span>
+      </div>
+      <div class="endpoint">
+        <span class="method delete">DELETE</span>
+        <span>/memory</span>
+        <span style="opacity: 0.8;">— Clear memory</span>
+      </div>
+    </div>
+
+    <div class="links">
+      <a href="https://github.com/thakurumeshbjp/umba.thakurarun3535.workers.dev" class="btn" target="_blank">
+        📚 Documentation
+      </a>
+      <a href="/health" class="btn">
+        ✅ Health Check
+      </a>
+      <a href="/plugins" class="btn">
+        🔌 View Plugins
+      </a>
+    </div>
+  </div>
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
